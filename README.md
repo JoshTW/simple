@@ -10,6 +10,11 @@ A note on astroid lander design. In order to land on an astroid I am thinking th
 - Check material strength and volume (per linear meter) of Carbon nanotube-based fibres invented at Rice University or a Super-Nanotube rope
 - find a high density asteroid
 
+## Space Apps Report
+
+I spent the weekend researching simulation options and working getting data into GMAT. I placed the database from http://minorplanetcenter.net/web_service on a local mysql server. I can got a list of asteroids that have an H value from the neowise project sorted by delta v. This provides Asteroid 0228502 which is about 300 meters (plus or minus 50m) diameter and has a 5.52 km/sec ?v, an estimate of the amount of energy necessary to jump from LEO (Low Earth Orbit) to the asteroid's orbit.
+I could not enter this asteroids orbit into GMAT with the help of the Horizons telnet command line interface:   telnet  ssd.jpl.nasa.gov 6775 but I was able to get a working SPK file for the 0000004 asteroid (Vesta). I think the normal tutorials will allow be to plan a simple mission to Vesta.
+
 
 ## Simulation Options:
 ### GMAT
@@ -105,5 +110,38 @@ EPOCH= 2456800.5  EC= 0.088612126  QR= 2.152206144  TP= 2456923.7240618  OM= 103
 
 Using existing Vesta data -> wld2309.15 (binary)
 
-The existing Vesta data works in GMAT but the generated data isn't working. Using both the telnet and the web gui results in an "Utility Exception: Error getting state for body "2228502". Message received from CSPICE is: [Insufficient ephemeris data has been loaded to compute the state of 2228502 relative to 399 (EARTH) at the ephemeris epoch 2015 JUN 01 12:00:35.184.]
+The existing Vesta data works in GMAT but the generated data isn't working. Using both the telnet and the web gui results in an "Utility Exception: Error getting state for body "2228502". Message received from CSPICE is: [Insufficient ephemeris data has been loaded to compute the state of 2228502 relative to 399 (EARTH) at the ephemeris epoch 2015 JUN 01 12:00:35.184.]"
 
+Values for existing data
+<code>
+*******************************************************************************
+JPL/HORIZONS                       4 Vesta                 2015-Apr-12 15:45:24
+Rec #:     4 (+COV)   Soln.date: 2013-Jul-16_08:46:23   # obs: 7107 (1827-2013)
+
+FK5/J2000.0 helio. ecliptic osc. elements (au, days, deg., period=Julian yrs):
+
+  EPOCH=  2451544.5 ! 2000-Jan-01.00 (CT)          Residual RMS= .30082
+   EC= .09002258422539088  QR= 2.148943570760723   TP= 2451614.8711416456
+   OM= 103.9514346862076   W=  149.5867755441192   IN= 7.133936541718016
+   A= 2.361535059561293    MA= 340.8879587395919   ADIST= 2.574126548361863
+   PER= 3.62911            N= .271589181           ANGMOM= .026327626
+   DAN= 2.53956            DDN= 2.17365            L= 253.7322376
+   B= 3.6044855            MOID= 1.13629997        TP= 2000-Mar-11.3711416456
+
+Asteroid physical parameters (km, seconds, rotational period in hours):
+   GM= 17.8                RAD= 265.               ROTPER= 5.342
+   H= 3.2                  G= .320                 B-V= .782
+                           ALBEDO= .4228           STYP= V
+
+ASTEROID comments:
+1: soln ref.= JPL#33, OCC=0
+2: source=ORB
+*******************************************************************************
+</code>
+
+So I might need to add "A= MA= ADIST= PER= N= ANGMOM= DAN= DDN= L= B= MOID= TP= " to my custom osculating elements except that the telnet interface indicates not to add some of these values.
+
+A= semimajor_axis
+MA= mean_anomaly
+
+Making Asteroid 0228502 a space craft in GMAT seems to require changing it's location into Earth based coordinates.

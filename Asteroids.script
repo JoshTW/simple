@@ -28,7 +28,7 @@ GMAT Vesta.TextureMapFileName = '../data/graphics/texture/GenericCelestialBody.j
 
 Create Asteroid a228502;
 GMAT a228502.NAIFId = 2228502;
-GMAT a228502.OrbitSpiceKernelName = {'C:\Users\Josh\Documents\Nasa Space Apps Challenge\Create Your Own Asteroid Mission\simple\0228502.bsp'};
+GMAT a228502.OrbitSpiceKernelName = {'C:\Users\Josh\Documents\Nasa Space Apps Challenge\Create Your Own Asteroid Mission\simple\0228502.bin'};
 GMAT a228502.OrbitColor = Salmon;
 GMAT a228502.TargetColor = DarkGray;
 GMAT a228502.EquatorialRadius = 0.3;
@@ -173,9 +173,9 @@ GMAT DefaultIB.GravitationalAccel = 9.810000000000001;
 
 Create OrbitView DefaultOrbitView;
 GMAT DefaultOrbitView.SolverIterations = Current;
-GMAT DefaultOrbitView.UpperLeft = [ 0.001218026796589525 -0.3354297693920336 ];
-GMAT DefaultOrbitView.Size = [ 0.9317904993909866 0.9119496855345912 ];
-GMAT DefaultOrbitView.RelativeZOrder = 94;
+GMAT DefaultOrbitView.UpperLeft = [ 0.000588235294117647 0 ];
+GMAT DefaultOrbitView.Size = [ 0.45 0.5117647058823529 ];
+GMAT DefaultOrbitView.RelativeZOrder = 225;
 GMAT DefaultOrbitView.Maximized = false;
 GMAT DefaultOrbitView.Add = {DefaultSC, Earth};
 GMAT DefaultOrbitView.CoordinateSystem = EarthMJ2000Eq;
@@ -204,9 +204,9 @@ GMAT DefaultOrbitView.EnableConstellations = On;
 
 Create GroundTrackPlot DefaultGroundTrackPlot;
 GMAT DefaultGroundTrackPlot.SolverIterations = Current;
-GMAT DefaultGroundTrackPlot.UpperLeft = [ 0.4518879415347138 0.2054507337526206 ];
-GMAT DefaultGroundTrackPlot.Size = [ 0.5006090133982948 0.4507337526205451 ];
-GMAT DefaultGroundTrackPlot.RelativeZOrder = 123;
+GMAT DefaultGroundTrackPlot.UpperLeft = [ 0.04764705882352941 0.5470588235294118 ];
+GMAT DefaultGroundTrackPlot.Size = [ 0.2417647058823529 0.2529411764705882 ];
+GMAT DefaultGroundTrackPlot.RelativeZOrder = 186;
 GMAT DefaultGroundTrackPlot.Maximized = false;
 GMAT DefaultGroundTrackPlot.Add = {DefaultSC};
 GMAT DefaultGroundTrackPlot.DataCollectFrequency = 1;
