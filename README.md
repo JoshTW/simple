@@ -12,8 +12,12 @@ A note on astroid lander design. In order to land on an astroid I am thinking th
 
 ## Space Apps Report
 
-I spent the weekend researching simulation options and working getting data into GMAT. I placed the database from http://minorplanetcenter.net/web_service on a local mysql server. I can got a list of asteroids that have an H value from the neowise project sorted by delta v. This provides Asteroid 0228502 which is about 300 meters (plus or minus 50m) diameter and has a 5.52 km/sec ?v, an estimate of the amount of energy necessary to jump from LEO (Low Earth Orbit) to the asteroid's orbit.
-I could not enter this asteroids orbit into GMAT with the help of the Horizons telnet command line interface:   telnet  ssd.jpl.nasa.gov 6775 but I was able to get a working SPK file for the 0000004 asteroid (Vesta). I think the normal tutorials will allow be to plan a simple mission to Vesta.
+I spent the weekend researching simulation options and working getting data into GMAT. I placed the database from http://minorplanetcenter.net/web_service on a local mysql server. I can get a list of asteroids that have an H value from the neowise project sorted by delta v. This provides Asteroid 0228502 which is about 300 meters (plus or minus 50m) diameter and has a 5.52 km/sec delta v, an estimate of the amount of energy necessary to jump from LEO (Low Earth Orbit) to the asteroid's orbit.
+I could not enter this asteroids orbit into GMAT with the help of the Horizons telnet command line interface:   telnet  ssd.jpl.nasa.gov 6775 but I was able to get a working SPK file for the 0000004 asteroid (Vesta). I think the normal tutorials will allow me to plan a simple mission to Vesta.
+
+UPDATE
+
+Doing a search for 0228502 in Horizons provides working SPK files. I still don't know how to generate a working SPK file from "your own osculating elements" using data from the minor planet center. I still don't have a source or method to estimate a resonable GM or Mu [km^3/sec^2] value.
 
 
 ## Simulation Options:
